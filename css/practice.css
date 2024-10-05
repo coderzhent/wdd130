@@ -1,0 +1,13 @@
+.main-para{
+    font-size: 1.5em;
+    line-height: 1.5em;
+
+    /*
+    the em at the end of the size means relative to the base font size. ie.. 1.5 x 12 = 18
+    */
+}
+
+#active {
+    background-color: white;
+    color: blue;
+}

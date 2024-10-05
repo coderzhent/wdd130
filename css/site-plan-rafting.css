@@ -20,7 +20,7 @@ Fonts are separated by a & */
 
   /* change the values below to your chosen font(s) */
   --heading-font: "Times New Roman";
-  --paragraph-font: Lato, Trebuchet, sans-serif;
+  --paragraph-font: Trebuchet, Lato, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
   /*
