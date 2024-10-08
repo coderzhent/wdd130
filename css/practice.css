@@ -11,3 +11,50 @@
     background-color: white;
     color: blue;
 }
+
+nav, footer {
+    background-color: steelblue;
+    color: white;
+    padding: 10px;
+}
+
+footer p {
+    font-size: 20px;
+    margin: 20px, auto;
+}
+
+/*
+use this for viewing the bounding lines of elements
+* {
+    border: 3px solid red;
+}
+*/
+a:hover {
+    background-color: white;
+    color: steelblue;
+}
+
+img {
+    width: 30%;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#logo-down {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    transform: rotateX(180deg);
+}
