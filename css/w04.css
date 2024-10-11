@@ -1,0 +1,44 @@
+body {
+    background-color: skyblue;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 25%;
+}
+
+footer {
+    margin: 5% auto;
+    font-weight: 500;
+    font-size: large;
+    max-width: 75%;
+}
+
+#Headline {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+#Headline:hover {
+    color:white;
+    font-weight: 3600;
+}
+
+img {
+    max-width: 40%;
+}
+
+ol {
+    text-align: left;
+    font-weight: 990;
+}
+
+#head-quote {
+    color: white;
+}
+
+#body-quote {
+    color: white;
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 5% auto;
+    max-width: 60%;
+}
