@@ -1,0 +1,20 @@
+main {
+    background-color: grey;
+}
+
+#banner {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.circlesbox {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.circles {
+    border: 0.9em solid rgb(85, 85, 85);
+    border-radius: 50%;
+    width: 18%;
+    margin: 5% 5%;
+}
