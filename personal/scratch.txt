@@ -1,0 +1,4 @@
+filter by recently added events
+	concerts are announced, but tickets aren't provided through the site
+	store a user history of interests and present notifications when something of the interest shows up
+filter by happening today/this weekend
