@@ -298,6 +298,31 @@ footer .social img:hover {
 }
 
 /* Start Styles Specific to the FAQ Page */
-.contact-grid {
+.faq ul li {
+  display: block;
+  padding: 0.2em;
 }
+
+.faq ul li a {
+  text-decoration: none;
+  color: var(--accent2-color);
+  font-weight: bold;
+}
+
+.faq ul li a:hover {
+  text-decoration: underline;
+}
+
+.faq ul li div {
+  display: none;
+  color: var(--accent2-color);
+  padding: 0.8em;
+  border-radius: 1.6em;
+  border: var(--accent1-color) solid;
+}
+
+.faq ul li div:target {
+  display: block;
+}
+
 /* End Styles Specific to the FAQ Page */
