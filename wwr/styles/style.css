@@ -298,6 +298,10 @@ footer .social img:hover {
 }
 
 /* Start Styles Specific to the FAQ Page */
+#faq-image {
+  width: 100%;
+}
+
 .faq ul li {
   display: block;
   padding: 0.2em;
