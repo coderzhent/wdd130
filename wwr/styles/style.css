@@ -330,3 +330,60 @@ footer .social img:hover {
 }
 
 /* End Styles Specific to the FAQ Page */
+
+/* Contact Us */
+.contact-us-grid form {
+  display: inline-block;
+  padding: auto;
+}
+
+.contact-us-grid label {
+  color: var(--accent2-color);
+}
+
+.contact-us-grid input,
+textarea {
+  font: var(--paragraph-font);
+  width: 400px;
+  box-sizing: border-box;
+  border: 1px solid var(--accent2-color);
+  border-radius: 0.3em;
+}
+
+.contact-us-grid input:focus,
+textarea:focus {
+  outline-style: solid;
+  outline-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.contact-us-grid textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.contact-us-grid .button {
+  padding-left: 16%;
+}
+
+.contact-us-grid input,
+textarea {
+  padding-left: 2%;
+}
+
+#feedback {
+  background-color: var(--accent1-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  display: none;
+  color: white;
+}
+
+.moveDown {
+  margin-top: 3em;
+}
+
+/* Contact us */

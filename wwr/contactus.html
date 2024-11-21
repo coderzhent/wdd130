@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <a href="index.html" id="logo-link">
+          <img class="logo" src="images/Rapids_logo2.jpg" alt="Rapids Logo" />
+        </a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="faq.html">FAQ</a>
+          <a href="site-plan-rafting.html">Site Plan</a>
+          <a id="active" href="contactus.html">Contact Us</a>
+        </nav>
+      </header>
+
+      <main class="contact-us-grid">
+        <div id="feedback"></div>
+
+        <form action="/new-route" method="post">
+          <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </p>
+          <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+          </p>
+          <p>
+            <label for="msg">Message</label>
+            <textarea name="user_message" id="msg"></textarea>
+          </p>
+          <p>
+            <input
+              type="text"
+              value="by default this element is filled with this text"
+            />
+          </p>
+          <p class="button">
+            <button type="submit">Send your message</button>
+          </p>
+        </form>
+      </main>
+
+      <footer>
+        <p>Dry Oar &copy; 2024 - Ezekial Curran</p>
+        <p><a href="site-plan-rafting.html">Site Plan</a></p>
+        <p><a href="contactus.html">Contact Us</a></p>
+        <div class="social">
+          <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="fb icon" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="images/twitter.png" alt="twitter icon" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="instagram icon" />
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const feedbackElement = document.getElementById("feedback");
+      const formElement = document.forms[0];
+      formElement.addEventListener("submit", function (e) {
+        e.preventDefault();
+        feedbackElement.innerHTML =
+          "Hello " +
+          formElement.user_name.value +
+          "! Thank you for your message. We will get back with you sas soon as possible!";
+        feedbackElement.style.display = "block";
+        document.body.classList.toggle("moveDown");
+      });
+    </script>
+  </body>
+</html>
