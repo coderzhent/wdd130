@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WDD130 | Personal</title>
-    </head>
-    <body>
-        <h1>Ezekial Curran</h1>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD130 | Personal</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <a href="index.html" id="logo-link">
+          <img class="logo" src="assets/images/Logo.png" alt="Main Logo" />
+        </a>
         <nav>
-            <a href="../index.html">Main</a>
-            <a href="../wwr/index.html">White Water Rafting Website</a>
-            <a href="../wwr/site-plan-rafting.html">White Water Rafting Siteplan</a>
-            <a href="../positioning.html">Positioning Activity</a>
-            <a href="site-plan-personal.html">Personal Siteplan</a>
+          <a id="active" href="index.html">Home</a>
+          <a href="list.html">Events</a>
+          <a href="editor.html">Event Maker</a>
         </nav>
-    </body>
+      </header>
+
+      <div id="hero">
+        <div id="hero-box">
+          <img
+            id="hero-img"
+            src="assets/images/connecting.jpg"
+            alt="People connecting"
+          />
+        </div>
+        <section id="hero-msg">
+          <h1 class="home-title">Experience Now</h1>
+          <div class="button-box">
+            <a id="create" href="editor.html">Create Events</a>
+          </div>
+          <div class="button-box">
+            <a id="find" href="list.html">Find Events</a>
+          </div>
+        </section>
+      </div>
+
+      <main class="home-grid">
+        <section class="dancing-card">
+          <img class="card-img" src="assets/images/dance.jpg" alt="dancing" />
+          <h2>Dancing</h2>
+        </section>
+        <section class="sports-card">
+          <img
+            class="card-img"
+            src="assets/images/sports.jpg"
+            alt="sports stadium"
+          />
+          <h2>Sports</h2>
+        </section>
+        <section class="fair-card">
+          <img
+            class="card-img"
+            src="assets/images/fair.jpg"
+            alt="fair grounds"
+          />
+          <h2>Fairs</h2>
+        </section>
+        <section class="concert-card">
+          <img class="card-img" src="assets/images/concert.jpg" alt="concert" />
+          <h2>Concert</h2>
+        </section>
+        <section class="rodeo-card">
+          <img class="card-img" src="assets/images/rodeo.jpg" alt="rodeo" />
+          <h2>Rodeo</h2>
+        </section>
+      </main>
+
+      <footer>
+        <p>Dry Oar &copy; 2024 - Ezekial Curran</p>
+        <p><a href="site-plan-personal.html">Site Plan</a></p>
+        <div class="social">
+          <a href="https://facebook.com" target="_blank">
+            <img src="assets/images/facebook.png" alt="fb icon" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="assets/images/twitter.png" alt="twitter icon" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="assets/images/instagram.png" alt="instagram icon" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
