@@ -1,9 +1,10 @@
 :root {
   --primary-color: #109e92;
   --secondary-color: #33364d;
-  --accent1-color: #dfaa81;
+  --accent1-color: rgb(223, 170, 129);
   --accent2-color: white;
   --accent3-color: #004f2d;
+  --fade-color: rgba(223, 170, 129, 0.75);
 
   --heading-font: "TaHoma";
   --paragraph-font: "Verdana", sans-serif;
@@ -28,12 +29,12 @@ body {
 }
 
 #content {
-  max-width: 1600px;
   margin: 0 auto;
 }
 
 /* Header Styles */
 header {
+  max-height: 150px;
   background-color: var(--secondary-color);
   display: grid;
   grid-template-columns: 150px auto;
@@ -51,13 +52,14 @@ header {
 nav {
   display: flex;
   justify-content: space-around;
+  max-height: 150px;
 }
 
 nav a {
   text-align: center;
   color: var(--paragraph-color-on-color);
   text-decoration: none;
-  padding: 3.5%;
+  padding: 2.7em;
 }
 
 nav a:hover {
@@ -65,11 +67,15 @@ nav a:hover {
   color: var(--nav-hover-link-color);
 }
 
+#active {
+  border: 3px solid var(--accent1-color);
+}
+
 /* Hero Section */
 #hero {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  margin-top: -100px;
+  margin-top: -75px;
 }
 
 #hero-box {
@@ -91,23 +97,36 @@ nav a:hover {
 }
 
 .home-title {
-  color: var(--headline-color-on-white);
+  color: var(--secondary-color);
   font-family: var(--paragraph-font);
   font-size: 2em;
   margin-top: 1.2%;
+  background-color: var(--fade-color);
+  border-radius: 0.5em;
 }
 
 #hero-msg h1,
 #hero-msg h4 {
   text-align: center;
-  color: var(--primary-color);
 }
 
 .button-box {
   text-align: left;
+  margin: 1.1em;
 }
 
-#create {
+.button-box a {
+  background-color: var(--fade-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.25em;
+  padding: 1.5% 3%;
+  border-radius: 7%;
+}
+
+.button-box a:hover {
+  background-color: var(--secondary-color);
+  color: var(--nav-hover-link-color);
 }
 
 /* Main Section */
@@ -189,6 +208,111 @@ footer .social img:hover {
   box-shadow: 0.2em 0.2em 0.4em #030f3e;
 }
 
+/* Beginning List CSS */
+.list-grid {
+  display: grid;
+  grid-template-columns: 180px auto;
+}
+
+#side-filters {
+  background: var(--fade-color);
+  padding: 8px 0;
+  grid-column: 1/2;
+  overflow: auto;
+}
+
+.filter {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 27px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.filter input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 25px;
+  background-color: var(--accent3-color);
+  opacity: 30%;
+}
+
+/* On mouse-over, add a grey background color */
+.filter:hover input ~ .checkmark {
+  opacity: 70%;
+}
+
+/* When the checkbox is checked, add a blue background */
+.filter input:checked ~ .checkmark {
+  opacity: 100%;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.filter input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.filter .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#side-filters a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--secondary-color);
+  display: block;
+}
+
+#side-filters a:hover {
+  color: var(--accent2-color);
+  background-color: var(--accent3-color);
+  opacity: 50%;
+}
+
+#result-list {
+  background-image: url(../assets/images/magnifying_glass.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 80%;
+  padding: 0px 10px;
+  grid-column: 2/3;
+  min-height: 1080px;
+  max-height: 21600px;
+}
+
 @media screen and (max-width: 900px) {
   #hero,
   .home-grid {
@@ -236,8 +360,13 @@ footer .social img:hover {
   footer {
     margin-top: 25px;
   }
-}
 
-#active {
-  border: 3px solid var(--accent1-color);
+  /* List Portion */
+  #side-filters {
+    padding-top: 15px;
+  }
+
+  #side-filters a {
+    font-size: 18px;
+  }
 }
