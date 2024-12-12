@@ -152,6 +152,7 @@ main section img {
   border: 0.4em solid var(--accent1-color);
   transition: transform 0.5s;
   box-shadow: 0.2em 0.2em 0.4em #5e5f63;
+  border-radius: 2em;
 }
 
 .card-img:hover {
@@ -208,7 +209,9 @@ footer .social img:hover {
   box-shadow: 0.2em 0.2em 0.4em #030f3e;
 }
 
+/* ******************* */
 /* Beginning List CSS */
+/* ******************* */
 .list-grid {
   display: grid;
   grid-template-columns: 180px auto;
@@ -313,15 +316,23 @@ footer .social img:hover {
   max-height: 21600px;
 }
 
+/* ********** */
+/* Editor CSS */
+/* ********** */
+
 @media screen and (max-width: 900px) {
-  #hero,
+  header {
+    max-height: fit-content;
+  }
   .home-grid {
     display: block;
     height: auto;
+    transform: translateY(0);
   }
   nav,
   footer {
     flex-direction: column;
+    max-height: fit-content;
   }
   nav a {
     display: block;
@@ -329,18 +340,41 @@ footer .social img:hover {
   }
   #hero {
     margin-top: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  #hero-box {
+    height: auto;
   }
   #hero-msg {
     margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
   }
   #hero-msg h4 {
     display: none;
   }
   #hero-msg h1 {
-    color: #6f7364;
+    color: var(--accent3-color);
+  }
+  #hero-msg .button-box {
+    align-self: end;
+    margin: 0.8em;
+    background-color: var(--accent1-color);
+    opacity: 90%;
+    padding: 10%;
+    border-radius: 2em;
+    text-align: center;
+    font-weight: 900;
+  }
+  #hero-msg .button-box a {
+    padding: 0;
+    color: var(--accent3-color);
   }
   .home-title {
     font-size: 25px;
+    grid-column: 1/3;
   }
   .rivers-card,
   .camping-card,

@@ -24,10 +24,10 @@
           <label class="filter">
             All
             <input
-              class="check-all"
+              id="check-all"
               type="checkbox"
               checked="checked"
-              onclick="document.getElementsByClassName('check1').checked = false" />
+              onclick="toggleAll()" />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -35,8 +35,7 @@
             <input
               class="check1"
               type="checkbox"
-              checked="checked"
-              onclick="document.getElementsByClassName('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false" />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -44,8 +43,7 @@
             <input
               class="check1"
               type="checkbox"
-              checked="checked"
-              onclick="document.getElementsByClassName('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false" />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -53,8 +51,7 @@
             <input
               class="check1"
               type="checkbox"
-              checked="checked"
-              onclick="document.getElementsByClassName('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false" />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -62,8 +59,7 @@
             <input
               class="check1"
               type="checkbox"
-              checked="checked"
-              onclick="document.getElementsByClassName('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false" />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -71,8 +67,7 @@
             <input
               class="check1"
               type="checkbox"
-              checked="checked"
-              onclick="document.getElementsByClassName('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false" />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -98,5 +93,16 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      function toggleAll() {
+        Array.prototype.filter.call(
+          document.getElementsByClassName("check1"),
+          (elem) =>
+            (elem.checked = !document.getElementById("check-all").checked)
+        );
+      }
+      function toggleCheck() {}
+    </script>
   </body>
 </html>
