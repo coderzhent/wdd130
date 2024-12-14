@@ -20,17 +20,26 @@
       </header>
 
       <main class="editor-grid">
-        <div id="editor-tools">
+        <div id="edit-dets">
+          <img src="assets/images/calendar.png" alt="sample upload image">
+          <form onsubmit="return validateDates()">
+            <label for="start-date">Start date:</label>
+            <input type="date" id="start-date" name="start-date" required>
+            <br><br>
+            <label for="end-date">End date:</label>
+            <input type="date" id="end-date" name="end-date" required>
+          </form>
         </div>
-
         <div id="edit-preview">
           <h1>Event Title</h1>
           <textarea id="edit-description" name="description" placeholder="Write description here..."></textarea>
         </div>
+        <div id="editor-tools">
+        </div>
       </main>
 
       <footer>
-        <p>Dry Oar &copy; 2024 - Ezekial Curran</p>
+        <p>Event Connect &copy; 2024 - Ezekial Curran</p>
         <p><a href="site-plan-personal.html">Site Plan</a></p>
         <div class="social">
           <a href="https://facebook.com" target="_blank">
@@ -44,5 +53,18 @@
           </a>
         </div>
       </footer>
+
+      <script>
+        function validateDates() {
+          const startDate = document.getElementById("start-date").value;
+          const endDate = document.getElementById("end-date").value;
+
+          if(startDate && endDate && new Date(endDate) < new Date(startDate)) {
+            alert('End date cannot be before the start date.');
+            return false;
+          }
+          return true;
+        }
+      </script>
     </body>
 </html>

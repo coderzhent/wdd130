@@ -319,6 +319,14 @@ footer .social img:hover {
 /* ********** */
 /* Editor CSS */
 /* ********** */
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+#edit-dets img {
+  max-width: 100%;
+}
 
 @media screen and (max-width: 900px) {
   header {
