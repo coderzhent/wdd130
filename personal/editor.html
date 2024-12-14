@@ -21,20 +21,104 @@
 
       <main class="editor-grid">
         <div id="edit-dets">
-          <img src="assets/images/calendar.png" alt="sample upload image">
+          <img
+            id="kustom-img"
+            src="assets/images/calendar.png"
+            alt="sample upload image" />
           <form onsubmit="return validateDates()">
             <label for="start-date">Start date:</label>
-            <input type="date" id="start-date" name="start-date" required>
-            <br><br>
+            <input type="date" id="start-date" name="start-date" required />
+            <br />
             <label for="end-date">End date:</label>
-            <input type="date" id="end-date" name="end-date" required>
+            <input type="date" id="end-date" name="end-date" required />
+            <br />
+            <label for="start-hour">Start time:</label>
+            <select name="start-hour" id="start-hour">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <label for="start-minute" class="minute">Minute:</label>
+            <select name="start-minute" id="start-minute">
+              <option value="00">00</option>
+              <option value="05">05</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
+            </select>
+            <label for="start-meridium" class="meridium">AM/PM</label>
+            <select name="start-meridium" id="start-meridium">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+            <br />
+            <label for="end-hour">End time:</label>
+            <select name="end-hour" id="end-hour">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <label for="end-minute" class="minute">Minute:</label>
+            <select name="end-minute" id="end-minute">
+              <option value="00">00</option>
+              <option value="05">05</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+              <option value="55">55</option>
+            </select>
+            <label for="end-meridium" class="meridium">AM/PM</label>
+            <select name="end-meridium" id="end-meridium">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
           </form>
         </div>
         <div id="edit-preview">
-          <h1>Event Title</h1>
-          <textarea id="edit-description" name="description" placeholder="Write description here..."></textarea>
+          <textarea
+            name="event-title"
+            id="event-title"
+            placeholder="Event Title"></textarea>
+          <textarea
+            id="edit-description"
+            name="description"
+            placeholder="Write description here..."></textarea>
         </div>
         <div id="editor-tools">
+          <h1>Tools</h1>
+          <h2>Upload Image for Event</h2>
+          <input type="file" id="up-img" accept="image/*" />
         </div>
       </main>
 
@@ -53,18 +137,41 @@
           </a>
         </div>
       </footer>
+    </div>
 
-      <script>
-        function validateDates() {
-          const startDate = document.getElementById("start-date").value;
-          const endDate = document.getElementById("end-date").value;
+    <script>
+      function validateDates() {
+        const startDate = document.getElementById("start-date").value;
+        const endDate = document.getElementById("end-date").value;
 
-          if(startDate && endDate && new Date(endDate) < new Date(startDate)) {
-            alert('End date cannot be before the start date.');
-            return false;
-          }
-          return true;
+        if (startDate && endDate && new Date(endDate) < new Date(startDate)) {
+          alert("End date cannot be before the start date.");
+          return false;
         }
-      </script>
-    </body>
+        return true;
+      }
+
+      const imgEl = document.getElementById("kustom-img");
+      const upImg = document.getElementById("up-img");
+      const textarea = document.getElementById("edit-description");
+
+      upImg.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            imgEl.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      textarea.addEventListener("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+      });
+
+      textarea.dispatchEvent(new Event("input"));
+    </script>
+  </body>
 </html>
