@@ -35,7 +35,8 @@
             <input
               class="check1"
               type="checkbox"
-              onclick="document.getElementById('check-all').checked = false" />
+              onclick="document.getElementById('check-all').checked = false"
+              ; />
             <span class="checkmark"></span>
           </label>
           <label class="filter">
@@ -74,6 +75,48 @@
 
         <div id="result-list">
           <h1>Results</h1>
+          <div id="res">
+            <div class="filtDiv dance">
+              <img
+                class="event-img"
+                src="assets/images/dance.jpg"
+                alt="Dance Event" />
+              <h3>Dance</h3>
+              <p>Country swing dancing at the MC.</p>
+            </div>
+            <div class="filtDiv football">
+              <img
+                class="event-img"
+                src="assets/images/sports.jpg"
+                alt="Sports Event" />
+              <h3>BYU Football Game</h3>
+              <p>BYU football watch party at the MC.</p>
+            </div>
+            <div class="filtDiv fair">
+              <img
+                class="event-img"
+                src="assets/images/fair.jpg"
+                alt="Fair Event" />
+              <h3>Fair</h3>
+              <p>County fair at the local county fair grounds.</p>
+            </div>
+            <div class="filtDiv concert">
+              <img
+                class="event-img"
+                src="assets/images/concert.jpg"
+                alt="Concert Event" />
+              <h3>Concert</h3>
+              <p>A super local concert by the best band ever.</p>
+            </div>
+            <div class="filtDiv rodeo">
+              <img
+                class="event-img"
+                src="assets/images/rodeo.jpg"
+                alt="Rodeo Event" />
+              <h3>Rodeo</h3>
+              <p>Annual rodeo at the county fair grounds.</p>
+            </div>
+          </div>
         </div>
       </main>
 
@@ -96,13 +139,50 @@
 
     <script>
       function toggleAll() {
+        if (this.checked) {
+          filterSelection("all");
+        }
         Array.prototype.filter.call(
           document.getElementsByClassName("check1"),
           (elem) =>
             (elem.checked = !document.getElementById("check-all").checked)
         );
       }
-      function toggleCheck() {}
+      function toggleCheck(el, name) {}
+
+      filterSelection("all");
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filtDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          filtOutItem(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) filtInItem(x[i], "show");
+        }
+      }
+
+      function filtInItem(el, name) {
+        var i, arr1, arr2;
+        arr1 = el.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            el.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function filtOutItem(el, name) {
+        var i, arr1, arr2;
+        arr1 = el.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        el.className = arr1.join(" ");
+      }
     </script>
   </body>
 </html>
